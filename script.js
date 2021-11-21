@@ -142,37 +142,37 @@ if(minutes < 10){
 }
 
 
-$( ".change" ).on("click", function() {
+document.querySelector( ".change" ).addEventListener("click", function() {
 
-  // check for dark mode class
-  if( $( ".right-col" ).hasClass( "darkRight-col" )) {
-      $( ".right-col" ).removeClass( "darkRight-col" );
-      $( ".change" ).text( "OFF" );
-  } else {
-      $( ".right-col" ).addClass( "darkRight-col" );
-      $( ".change" ).text( "ON" );
-  }
-  if( $( ".left-col" ).hasClass( "darkLeft-col" )) {
-      $( ".left-col" ).removeClass( "darkLeft-col" );
-      $( ".change" ).text( "OFF" );
-  } else {
-      $( ".left-col" ).addClass( "darkLeft-col" );
-      $( ".change" ).text( "ON" );
-  }
-  if( $( ".auto-div" ).hasClass( "darkAuto-div" )) {
-      $( ".auto-div" ).removeClass( "darkAuto-div" );
-      $( ".change" ).text( "OFF" );
-  } else {
-      $( ".auto-div" ).addClass( "darkAuto-div" );
-      $( ".change" ).text( "ON" );
-  }
+    // check for dark mode class
+    if( document.querySelector( ".right-col" ).classList.contains( "darkRight-col" )) {
+        document.querySelector( ".right-col" ).removeClass( "darkRight-col" );
+        document.querySelector( ".change" ).text( "OFF" );
+    } else {
+        document.querySelector( ".right-col" ).classList.add( "darkRight-col" );
+        document.querySelector( ".change" ).text( "ON" );
+    }
+    if( document.querySelector( ".left-col" ).classList.contains( "darkLeft-col" )) {
+        document.querySelector( ".left-col" ).removeClass( "darkLeft-col" );
+        document.querySelector( ".change" ).text( "OFF" );
+    } else {
+        document.querySelector( ".left-col" ).classList.add( "darkLeft-col" );
+        document.querySelector( ".change" ).text( "ON" );
+    }
+    if( document.querySelector( ".auto-div" ).classList.contains( "darkAuto-div" )) {
+        document.querySelector( ".auto-div" ).removeClass( "darkAuto-div" );
+        document.querySelector( ".change" ).text( "OFF" );
+    } else {
+        document.querySelector( ".auto-div" ).classList.add( "darkAuto-div" );
+        document.querySelector( ".change" ).text( "ON" );
+    }
 
-  // check is dark mode is on/off
-  if( $( ".mode" ).hasClass( "ON" )) {
-      $( ".mode" ).removeClass( "ON" );
-      $( ".mode" ).addclass( "OFF" );
-  } else {
-      $( ".mode" ).removeClass( "ON" );        
-      $( ".mode" ).addClass( "ON" );
-  }
+    // check is dark mode is on/off
+    if( document.querySelector( ".mode" ).classList.contains( "ON" )) {
+        document.querySelector( ".mode" ).removeClass( "ON" );
+        document.querySelector( ".mode" ).addclass( "OFF" );
+    } else {
+        document.querySelector( ".mode" ).removeClass( "ON" );        
+        document.querySelector( ".mode" ).classList.add( "ON" );
+    }
 });
