@@ -35,7 +35,7 @@ if(minutes < 10){
   //add a class to our new div element
 
   let darkMode = document.getElementById("mode");
-  if (darkMode.className === "mode ON"){
+  if (darkMode.className == "mode ON"){
       theNewDiv.classList.add("auto-div");
       theNewDiv.classList.add("darkAuto-div");
   } else {
@@ -141,38 +141,40 @@ if(minutes < 10){
 
 }
 
-
 document.querySelector( ".change" ).addEventListener("click", function() {
 
     // check for dark mode class
-    if( document.querySelector( ".right-col" ).classList.contains( "darkRight-col" )) {
-        document.querySelector( ".right-col" ).removeClass( "darkRight-col" );
-        document.querySelector( ".change" ).text( "OFF" );
+    if( document.querySelector( ".right-col" ).classList.contains( "darkRight-col" ) &&  document.querySelector( ".left-col" ).classList.contains( "darkLeft-col" )  ) {
+        document.querySelector( ".right-col" ).classList.remove( "darkRight-col" );
+        document.querySelector( ".left-col" ).classList.remove( "darkLeft-col" );
     } else {
         document.querySelector( ".right-col" ).classList.add( "darkRight-col" );
-        document.querySelector( ".change" ).text( "ON" );
+        document.querySelector( ".left-col" ).classList.add( "darkLeft-col" );
     }
-    if( document.querySelector( ".left-col" ).classList.contains( "darkLeft-col" )) {
-        document.querySelector( ".left-col" ).removeClass( "darkLeft-col" );
+  /*  if( document.querySelector( ".left-col" ).classList.contains( "darkLeft-col" )) {
+        document.querySelector( ".left-col" ).classList.remove( "darkLeft-col" );
         document.querySelector( ".change" ).text( "OFF" );
     } else {
         document.querySelector( ".left-col" ).classList.add( "darkLeft-col" );
         document.querySelector( ".change" ).text( "ON" );
-    }
+    }*/
+
+    document.querySelector( ".change" ).addEventListener("click", function() {
     if( document.querySelector( ".auto-div" ).classList.contains( "darkAuto-div" )) {
-        document.querySelector( ".auto-div" ).removeClass( "darkAuto-div" );
+        document.querySelector( ".auto-div" ).classList.remove( "darkAuto-div" );
         document.querySelector( ".change" ).text( "OFF" );
     } else {
-        document.querySelector( ".auto-div" ).classList.add( "darkAuto-div" );
+        document.querySelector( "auto-div" ).classList.add( "darkAuto-div" );
         document.querySelector( ".change" ).text( "ON" );
     }
+  })
 
     // check is dark mode is on/off
     if( document.querySelector( ".mode" ).classList.contains( "ON" )) {
-        document.querySelector( ".mode" ).removeClass( "ON" );
-        document.querySelector( ".mode" ).addclass( "OFF" );
+        document.querySelector( ".mode" ).classList.remove( "ON" );
+        document.querySelector( ".mode" ).classList.add( "OFF" );
     } else {
-        document.querySelector( ".mode" ).removeClass( "ON" );        
+        document.querySelector( ".mode" ).classList.remove( "ON" );
         document.querySelector( ".mode" ).classList.add( "ON" );
     }
 });
